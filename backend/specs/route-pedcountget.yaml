@@ -1,0 +1,22 @@
+apiVersion: fission.io/v1
+kind: HTTPTrigger
+metadata:
+  creationTimestamp: null
+  name: pedcountget
+spec:
+  createingress: true
+  functionref:
+    functionweights: null
+    name: pedcountget
+    type: name
+  host: ""
+  ingressconfig:
+    annotations: null
+    host: '*'
+    path: /pedcountget
+    tls: ""
+  method: ""
+  methods:
+  - GET
+  prefix: ""
+  relativeurl: /pedcountget

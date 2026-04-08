@@ -1,0 +1,30 @@
+curl -XPUT -k 'https://127.0.0.1:9200/aussocialstate' \
+   --header 'Content-Type: application/json' \
+   --data '{
+  "settings": {
+    "index": {
+      "number_of_shards": 3,
+      "number_of_replicas": 1
+    }
+  },
+  "mappings": {
+    "properties": {
+      "last_id": {
+        "type": "keyword"
+      },
+      "record_count": {
+        "type": "integer"
+      },
+      "cumul_sum_weather": {
+        "type": "integer"
+      },
+      "cumul_sum_traffic": {
+        "type": "integer"
+      },
+      "cumul_sum_airquality": {
+        "type": "integer"
+      }
+    }
+  }
+}' \
+--user 'elastic:elastic' | jq '.'

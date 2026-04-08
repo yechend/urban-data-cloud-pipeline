@@ -1,0 +1,25 @@
+include:
+- ./trafficstatistic.zip
+kind: ArchiveUploadSpec
+name: trafficstatistic-zip-26sI
+
+---
+apiVersion: fission.io/v1
+kind: Package
+metadata:
+  creationTimestamp: null
+  name: trafficstatistic
+spec:
+  buildcmd: ./build.sh
+  deployment:
+    checksum: {}
+  environment:
+    name: python
+    namespace: ""
+  source:
+    checksum: {}
+    type: url
+    url: archive://trafficstatistic-zip-26sI
+status:
+  buildstatus: pending
+  lastUpdateTimestamp: "2024-05-28T01:26:43Z"

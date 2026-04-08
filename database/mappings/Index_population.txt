@@ -1,0 +1,30 @@
+curl -X PUT "https://127.0.0.1:9200/population" -H 'Content-Type: application/json' -d'
+{
+  "settings": {
+    "number_of_shards": 3,
+    "number_of_replicas": 1
+  },
+  "mappings": {
+    "properties": {
+      "persons_num": {
+        "type": "integer",
+        "null_value": 0
+      },
+      "percentage_person_aged_0_14": {
+        "type": "float",
+        "null_value": 0
+      },
+      "percentage_person_aged_15_64": {
+        "type": "integer",
+        "null_value": 0
+      },
+      "percentage_person_aged_65_plus": {
+        "type": "integer",
+        "null_value": 0
+      },
+      "feature_name": {
+        "type": "keyword"
+      }
+    }
+  }
+}' --insecure --user elastic:elastic

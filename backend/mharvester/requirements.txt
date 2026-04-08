@@ -1,0 +1,6 @@
+beautifulsoup4==4.12.3
+elasticsearch8==8.11.0
+nltk==3.8.1
+requests==2.31.0
+textblob==0.15.3
+lxml==5.2.2

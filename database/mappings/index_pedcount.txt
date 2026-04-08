@@ -1,0 +1,37 @@
+
+
+curl -X PUT "https://127.0.0.1:9200/pedcount" -H 'Content-Type: application/json' -d'
+{
+  "settings": {
+    "number_of_shards": 3,
+    "number_of_replicas": 1
+  },
+  "mappings": {
+    "properties": {
+      "sensor_name": {
+        "type": "keyword"
+      },
+      "timestamp": {
+        "type": "date",
+        "format": "strict_date_time||epoch_millis"
+      },
+      "locationid": {
+        "type": "keyword"
+      },
+      "direction_1": {
+        "type": "integer"
+      },
+      "direction_2": {
+        "type": "integer"
+      },
+      "total_of_directions": {
+        "type": "integer"
+      },
+      "location": {
+        "type": "geo_point"
+      }
+    }
+  }
+}' --insecure --user 'elastic:elastic'
+
+

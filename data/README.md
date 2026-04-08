@@ -1,0 +1,1 @@
+This folder contains examples of SUDO data and pedestrian counting system sensor locations for scenario analyis.

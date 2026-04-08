@@ -1,0 +1,20 @@
+GET /_search
+{
+  "query": {
+            "range": {
+                "created_at": {
+                    "gte": start_date,
+                    "lte": end_date,
+                    "format": "yyyy-MM-dd"
+                }
+            }
+        },
+        "sort": [
+            {
+                "created_at": {
+                    "order": "asc"
+                }
+            }
+        ],
+        "size": 10000
+}

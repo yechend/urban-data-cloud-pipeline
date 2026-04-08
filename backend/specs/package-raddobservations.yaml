@@ -1,0 +1,25 @@
+include:
+- ./raddobservations.zip
+kind: ArchiveUploadSpec
+name: raddobservations-zip-XIwP
+
+---
+apiVersion: fission.io/v1
+kind: Package
+metadata:
+  creationTimestamp: null
+  name: raddobservations
+spec:
+  buildcmd: ./build.sh
+  deployment:
+    checksum: {}
+  environment:
+    name: python
+    namespace: ""
+  source:
+    checksum: {}
+    type: url
+    url: archive://raddobservations-zip-XIwP
+status:
+  buildstatus: pending
+  lastUpdateTimestamp: "2024-05-16T13:43:41Z"

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: default
+  name: shared-mastodon
+data:
+  ES_USERNAME: elastic
+  ES_PASSWORD: elastic
+  MASTODON_AU_TOKEN: HyLyuyQB9e3HAA_YLn4LQLkg4PV1OGPTRD4A7su4Q04
+  MASTODON_SOCIAL_TOKEN: wnyxfJhhzfOFjkw_6-B-n3Ej4_5_6Xn-A_GzeNyv5t4

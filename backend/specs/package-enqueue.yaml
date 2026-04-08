@@ -1,0 +1,25 @@
+include:
+- ./enqueue.zip
+kind: ArchiveUploadSpec
+name: enqueue-zip-VNUc
+
+---
+apiVersion: fission.io/v1
+kind: Package
+metadata:
+  creationTimestamp: null
+  name: enqueue
+spec:
+  buildcmd: ./build.sh
+  deployment:
+    checksum: {}
+  environment:
+    name: python
+    namespace: ""
+  source:
+    checksum: {}
+    type: url
+    url: archive://enqueue-zip-VNUc
+status:
+  buildstatus: pending
+  lastUpdateTimestamp: "2024-05-11T01:03:23Z"

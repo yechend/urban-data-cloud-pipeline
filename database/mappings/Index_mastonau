@@ -1,0 +1,71 @@
+curl -XPUT -k 'https://127.0.0.1:9200/mastodonau' \
+   --header 'Content-Type: application/json' \
+   --data '{
+    "settings": {
+        "index": {
+            "number_of_shards": 3,
+            "number_of_replicas": 1
+        }
+    },
+    "mappings": {
+        "properties": {
+            "id": {
+                "type": "keyword"
+            },
+            "created_at": {
+                "type": "date"
+            },
+            "lang": {
+                "type": "keyword"
+            },
+            "tags": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "sentiment": {
+                "type": "float"
+            },
+            "tokens": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                    }
+                }
+            },
+            "mentions_or_hashtags": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                    }
+                }
+            },
+            "count_weather": {
+                "type": "integer"
+            },
+            "count_traffic": {
+                "type": "integer"
+            },
+            "count_airquality": {
+                "type": "integer"
+            },
+            "cumul_sum_weather": {
+                "type": "integer"
+            },
+            "cumul_sum_traffic": {
+                "type": "integer"
+            },
+            "cumul_sum_airquality": {
+                "type": "integer"
+            }
+        }
+    }
+}' \
+   --user 'elastic:elastic' | jq '.'

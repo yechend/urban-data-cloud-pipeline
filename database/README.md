@@ -1,0 +1,1 @@
+This contains ElasticSearch type mappings to create indices and queries for front-end analysis and visualisation.

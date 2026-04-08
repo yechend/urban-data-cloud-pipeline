@@ -1,0 +1,25 @@
+include:
+- ./aussocialquery.zip
+kind: ArchiveUploadSpec
+name: aussocialquery-zip-SzkK
+
+---
+apiVersion: fission.io/v1
+kind: Package
+metadata:
+  creationTimestamp: null
+  name: aussocialquery
+spec:
+  buildcmd: ./build.sh
+  deployment:
+    checksum: {}
+  environment:
+    name: python
+    namespace: ""
+  source:
+    checksum: {}
+    type: url
+    url: archive://aussocialquery-zip-SzkK
+status:
+  buildstatus: pending
+  lastUpdateTimestamp: "2024-05-27T06:08:21Z"

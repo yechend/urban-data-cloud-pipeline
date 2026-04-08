@@ -1,0 +1,52 @@
+include:
+- ./functions/Rharvester.py
+kind: ArchiveUploadSpec
+name: functions-rharvester-py-ON2l
+
+---
+apiVersion: fission.io/v1
+kind: Package
+metadata:
+  creationTimestamp: null
+  name: rharvester-88373a12-94f8-46c3-b022-d1c4ab06f540
+spec:
+  deployment:
+    checksum: {}
+    type: url
+    url: archive://functions-rharvester-py-ON2l
+  environment:
+    name: python
+    namespace: ""
+  source:
+    checksum: {}
+status:
+  buildstatus: none
+  lastUpdateTimestamp: "2024-05-10T10:03:10Z"
+
+---
+apiVersion: fission.io/v1
+kind: Function
+metadata:
+  creationTimestamp: null
+  name: rharvester
+spec:
+  InvokeStrategy:
+    ExecutionStrategy:
+      ExecutorType: poolmgr
+      MaxScale: 0
+      MinScale: 0
+      SpecializationTimeout: 120
+      TargetCPUPercent: 0
+    StrategyType: execution
+  concurrency: 500
+  environment:
+    name: python
+    namespace: ""
+  functionTimeout: 60
+  idletimeout: 120
+  package:
+    packageref:
+      name: rharvester-88373a12-94f8-46c3-b022-d1c4ab06f540
+      namespace: ""
+  requestsPerPod: 1
+  resources: {}
