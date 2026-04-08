@@ -1,51 +1,228 @@
-## Cloud and Cloud Computing - Group 25
-# Cloud-Driven Insights: Enhancing Urban Planning and Transportation in Victoria
-## Overview
-This project leverages cloud computing to develop an in-depth correlation study of urban transportation in Victoria, focusing on five key scenarios: pedestrian distribution, regional population density, usage per station, traffic congestion, and social media activity. The project utilizes the Melbourne Research Cloud (MRC) and integrates various technologies and tools to collect, process, analyze, and visualize data.
+# Urban Data Cloud Pipeline  
+### Scalable Cloud Infrastructure for Urban Transportation Analytics (Victoria, Australia)
 
-## Software Stack Installation and Required Pre-configuration
-The detailed pre-requirements, client configuration, Kubernetes architecture design, and deplyments of Fission, ElasticSearch, Kibana, Kafka, and other usage can be referred to the linke below:
-https://gitlab.unimelb.edu.au/feit-comp90024/comp90024/-/tree/master
+> Built a scalable cloud-native data pipeline using Kubernetes, Kafka, and Elasticsearch to analyse real-world urban mobility data.
 
-Detialed list of functions and triggers can be found in the Appendix in the report under the folder Docs.
+---
 
-## Technology Stack
-1. Back-end: Kubernetes, Helm, Fission, Elasticsearch, Kafka
-2. Front-end: Jupyter Notebook, Folium, Seaborn, Matplotlib, ipywidgets
-3. Data Processing: Pandas, NumPy, JSON, re
+## 🚀 Overview
+This project builds a **cloud-native, distributed data pipeline** to analyse urban transportation dynamics across Victoria, integrating heterogeneous, large-scale data sources into a unified analytics platform.
 
-## Table of Contents for Project Repository
-1. Backend: Source code for the application backend (harvesters, analytics, YAML specifications,  etc.)
-2. Frontend: Source code for the client part of the application (Jupyter notebooks) including individual development and final combined version.
-3. Test: Source code for backend automated tests
-4. Data: Examples of SUDO data and pedestrian counting system sensor locations.
-5. Docs: Final report for this project.
-6. Database: Elasticsearch type mappings and queries.
+The system processes and correlates data across five key domains:
+- Pedestrian mobility  
+- Regional population density  
+- Public transport demand  
+- Traffic congestion  
+- Social media sentiment  
 
-## Data Sources
-1. Spatial Urban Data Observatory (SUDO): https://sudo.eresearch.unimelb.edu.au/
-2. Mastodon: https://mastodon.au and https://aus.social
-3. Melbourne Data - the City of Melbourne’s Open Data Platform: https://data.melbourne.vic.gov.au/explore/dataset/pedestrian-counting-system-monthly-counts-per-hour
-4. Train Service Passenger Counts Dataset: https://www.data.vic.gov.au/train-service-passenger-counts
-5. Real-time Traffic Congestion: https://data-exchange.vicroads.vic.gov.au/
+Designed and deployed on the **Melbourne Research Cloud (MRC)**, the platform demonstrates an end-to-end **data engineering and cloud systems workflow**, from ingestion to real-time analytics and visualisation.
 
-## Scenarios and Analysis
-The project focuses on analyzing five scenarios:
-1. SUDO: Regional population data analysis.
-2. Mastodon: Sentiment analysis influenced by traffic conditions, weather, and air quality.
-3. Pedestrian Counts: Analysis of pedestrian activity.
-4. Train Service Passenger Counts: Trends and volume of passenger flow.
-5. Real-time Congestion: Visualization of traffic congestion data.
+---
 
-## Other Branches
-Other branches are for each team member to store their codes and results from the initial design on local machines, testing on local machines with ElasticSearch, straightforward deployements on K8s, and final YAML spec deployment on Fission.
+## 🏗️ Architecture Overview
 
-## Team Members
-1. Yechen Deng (647915)
-2. Binghong Xing (1221767)
-3. Chenxi Yao (1439064)
-4. Mingyang Yao (1435451)
-5. Ziying Zhang (1424322)
+<p align="center">
+  <img src="docs/architecture.png" width="700"/>
+</p>
 
-## Acknowledgements
-We extend our sincere thanks to Professor Richard Sinnott, Mr. Luca Morandini, and Mr. Yao Pan for their invaluable guidance and supervision throughout this project.
+---
+
+## 🔄 Data Pipeline
+
+### Real-time Pipeline
+<p align="center">
+  <img src="docs/realtime_pipeline.png" width="700"/>
+</p>
+
+### Static / Historical Pipeline
+<p align="center">
+  <img src="docs/static_pipeline.png" width="700"/>
+</p>
+
+---
+
+## 🏗️ System Architecture
+
+### High-Level Pipeline
+Data Sources → Ingestion → Streaming → Processing → Storage → Visualisation
+
+### Components
+
+- **Data Ingestion**
+  - API harvesters for SUDO, Mastodon, transport, and traffic datasets  
+
+- **Streaming Layer**
+  - Kafka enables asynchronous, scalable event-driven data flow  
+
+- **Processing Layer**
+  - Serverless functions using **Fission (on Kubernetes)**  
+  - Stateless, horizontally scalable processing  
+
+- **Storage Layer**
+  - Elasticsearch for indexing, querying, and analytics  
+
+- **Visualisation Layer**
+  - Jupyter Notebooks with geospatial and statistical visualisation  
+
+---
+
+## 🛠️ Tech Stack
+
+### Cloud & Infrastructure
+- Kubernetes (cluster orchestration)  
+- Helm (deployment management)  
+- Fission (serverless functions)  
+- Kafka (distributed streaming)  
+
+### Data Engineering
+- Python  
+- Pandas, NumPy  
+- JSON processing  
+
+### Storage & Query
+- Elasticsearch  
+
+### Visualisation
+- Jupyter Notebook  
+- Folium (geospatial visualisation)  
+- Seaborn, Matplotlib  
+- ipywidgets  
+
+---
+
+## 📊 Key Features
+
+- ⚡ **Real-time data ingestion** from multiple urban data sources  
+- ☁️ **Scalable cloud processing** via Kubernetes + serverless architecture  
+- 🔄 **Streaming pipeline design** using Kafka  
+- 🔍 **Fast querying and indexing** with Elasticsearch  
+- 🗺️ **Geospatial visualisation** of urban mobility patterns  
+- 🔗 **Cross-domain analytics** combining transport, population, and sentiment data  
+---
+
+## 📂 Project Structure
+```
+backend/ # Data ingestion, processing logic, deployment configs (K8s, Fission)
+frontend/ # Analysis notebooks and visualisation scripts
+database/ # Elasticsearch mappings and queries
+data/ # Sample datasets
+test/ # Automated backend tests
+docs/ # Final report and technical documentation + images
+```
+
+## 📈 Analytical Scenarios
+
+### 1. Population Analysis (SUDO)
+- Regional demographic distribution  
+- Density trends across Victoria  
+
+### 2. Social Media Sentiment (Mastodon)
+- Sentiment analysis  
+- Correlation with traffic, weather, and air quality  
+
+### 3. Pedestrian Activity
+- Foot traffic patterns across Melbourne CBD  
+- Temporal and spatial trends  
+
+### 4. Public Transport Usage
+- Passenger flow analysis  
+- Station-level demand insights  
+
+### 5. Traffic Congestion
+- Real-time congestion mapping  
+- Spatial visualisation of road conditions  
+
+---
+
+## 📊 Example Outputs
+
+### Pedestrian Analysis
+<p align="center">
+  <img src="docs/pedestrian.png" width="600"/>
+</p>
+
+### Social Media vs Traffic
+<p align="center">
+  <img src="docs/sentiment.png" width="600"/>
+</p>
+
+### Transport Network
+<p align="center">
+  <img src="docs/transport.png" width="600"/>
+</p>
+
+### Traffic Congestion
+<p align="center">
+  <img src="docs/congestion.png" width="600"/>
+</p>
+
+---
+
+## ☁️ Cloud Infrastructure
+
+<p align="center">
+  <img src="docs/cloud_architecture.png" width="700"/>
+</p>
+
+---
+
+## 🌐 Data Sources
+
+- Spatial Urban Data Observatory (SUDO)  
+- Mastodon (mastodon.au, aus.social)  
+- City of Melbourne Open Data Platform  
+- Victoria Train Service Passenger Counts  
+- VicRoads Traffic Data  
+
+---
+
+## ⚙️ Setup & Deployment
+
+This system was deployed on the **Melbourne Research Cloud (MRC)**.
+
+Full deployment requires:
+- Kubernetes cluster  
+- Fission (serverless framework)  
+- Kafka  
+- Elasticsearch  
+
+Reference setup:  
+https://gitlab.unimelb.edu.au/feit-comp90024/comp90024/-/tree/master  
+
+---
+
+## 🧠 Key Learnings
+
+- Designing **distributed, scalable data pipelines**  
+- Implementing **event-driven architectures (Kafka)**  
+- Deploying **serverless functions on Kubernetes**  
+- Handling **large-scale, real-world datasets**  
+- Building **end-to-end data engineering systems**  
+
+---
+
+## 🎯 Impact & Applications
+
+- Supports **data-driven urban planning decisions**  
+- Enables **real-time transportation insights**  
+- Demonstrates production-style **cloud data engineering architecture**  
+
+---
+
+## 👥 Team
+
+- Yechen Deng  
+- Binghong Xing  
+- Chenxi Yao  
+- Mingyang Yao  
+- Ziying Zhang  
+
+---
+
+## 📄 License
+This project is licensed under the MIT License.
+
+---
+
+## 📌 Note
+This project was developed as part of coursework at the **University of Melbourne**.
