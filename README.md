@@ -92,12 +92,12 @@ Data Sources → Ingestion → Streaming → Processing → Storage → Visualis
 
 ## 📊 Key Features
 
-- ⚡ **Real-time data ingestion** from multiple urban data sources  
-- ☁️ **Scalable cloud processing** via Kubernetes + serverless architecture  
-- 🔄 **Streaming pipeline design** using Kafka  
-- 🔍 **Fast querying and indexing** with Elasticsearch  
-- 🗺️ **Geospatial visualisation** of urban mobility patterns  
-- 🔗 **Cross-domain analytics** combining transport, population, and sentiment data  
+- **Real-time data ingestion** from multiple urban data sources  
+- **Scalable cloud processing** via Kubernetes + serverless architecture  
+- **Streaming pipeline design** using Kafka  
+- **Fast querying and indexing** with Elasticsearch  
+- **Geospatial visualisation** of urban mobility patterns  
+- **Cross-domain analytics** combining transport, population, and sentiment data  
 ---
 
 ## 📂 Project Structure
