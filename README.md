@@ -221,8 +221,3 @@ https://gitlab.unimelb.edu.au/feit-comp90024/comp90024/-/tree/master
 
 ## 📄 License
 This project is licensed under the MIT License.
-
----
-
-## 📌 Note
-This project was developed as part of coursework at the **University of Melbourne**.
