@@ -102,12 +102,29 @@ Data Sources → Ingestion → Streaming → Processing → Storage → Visualis
 
 ## 📂 Project Structure
 ```
-backend/ # Data ingestion, processing logic, deployment configs (K8s, Fission)
-frontend/ # Analysis notebooks and visualisation scripts
-database/ # Elasticsearch mappings and queries
-data/ # Sample datasets
-test/ # Automated backend tests
-docs/ # Final report and technical documentation + images
+urban-data-cloud-pipeline/
+│
+├── backend/
+│   ├── Data ingestion pipelines, processing logic, and deployment configurations
+│   └── Includes Kubernetes (K8s) and Fission serverless setup
+│
+├── frontend/
+│   ├── Data analysis notebooks and visualisation workflows
+│   └── Supports exploratory analysis and presentation outputs
+│
+├── database/
+│   ├── Elasticsearch index mappings and query definitions
+│   └── Optimised for fast retrieval and analytics
+│
+├── data/
+│   └── Sample datasets used for testing and demonstration
+│
+├── test/
+│   └── Automated backend tests ensuring pipeline reliability
+│
+└── docs/
+    ├── Final report, technical documentation, and architecture diagrams
+    └── Includes supporting images and project artefacts
 ```
 
 ## 📈 Analytical Scenarios
