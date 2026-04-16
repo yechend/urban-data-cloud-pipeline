@@ -1,7 +1,7 @@
 # Urban Data Cloud Pipeline  
 ### Scalable Cloud Infrastructure for Urban Transportation Analytics (Victoria, Australia)
 
-> Built a scalable cloud-native data pipeline using Kubernetes, Kafka, and Elasticsearch to analyse real-world urban mobility data.
+Built a scalable cloud-native data pipeline using Kubernetes, Kafka, and Elasticsearch to analyse real-world urban mobility data.
 
 ---
 
